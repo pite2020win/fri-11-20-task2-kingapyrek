@@ -1,30 +1,49 @@
-# Class diary
-#
-# Create program for handling lesson scores.
-# Use python to handle student (highscool) class scores, and attendance.
-# Make it possible to:
-# - Get students total average score (average across classes)
-# - get students average score in class
-# - hold students name and surname
-# - Count total attendance of student
-#
-# Please, use your imagination and create more functionalities.
-# Your project should be able to handle entire school(s?).
-# If you have enough courage and time, try storing (reading/writing)
-# data in text files (YAML, JSON).
-# If you have even more courage, try implementing user interface (might be text-like).
-#
-#Try to expand your implementation as best as you can. 
-#Think of as many features as you can, and try implementing them.
-#Make intelligent use of pythons syntactic sugar (overloading, iterators, generators, etc)
-#Most of all: CREATE GOOD, RELIABLE, READABLE CODE.
-#The goal of this task is for you to SHOW YOUR BEST python programming skills.
-#Impress everyone with your skills, show off with your code.
-#
-#Your program must be runnable with command "python task.py".
-#Show some usecases of your library in the code (print some things)
-#
-#When you are done upload this code to your github repository. 
-#
-#Delete these comments before commit!
-#Good luck.
+
+
+
+
+class School:
+    def __init__(self, name, stud_list):
+        self.stud_list=stud_list
+        self.name_school=name
+
+
+class Student:
+    def __init__(self,name, surname, classes):
+        self.name=name
+        self.surname=surname
+        self.classes=[]
+        self.classes.append(classes)
+
+    def add_class(self, class_new):
+        self.classes.append(class_new)
+
+    def count_attendace(self):
+        total=0
+        for x in self.classes:
+            total+=x.attendance
+
+        print(len(self.classes)/total*100)
+
+
+
+class Class_stud:
+    def __init__(self, name, attendance=None, grade=None):
+        self.name=name
+        self.attendance=attendance
+        self.grade=grade
+
+    def check_attendance(self):
+        self.attendance=1
+
+
+class1=Class_stud('math')
+stud1=Student('John','Smith',class1)
+stud1.classes[0].check_attendance
+
+school= School('highschool', stud1)
+stud1.count_attendace
+
+    
+
+
