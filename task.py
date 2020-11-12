@@ -68,7 +68,7 @@ def show_statistics_class(sql, class_name):
             stud += 1
             tot_avg += result[0]
             tot_attend += result[1]
-            logging.info('Student {} {} average score - {} and attendance {}'.format(student['name'],
+            logging.info('Student {} {} average score - {} and attendance {}%'.format(student['name'],
                         student['surname'], result[0], result[1]))
     logging.info('Total class {} average score - {} and attendance {}%\n\n'.format(class_name, round(tot_avg/stud, 2), round(tot_attend/stud, 2)))
 
