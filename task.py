@@ -70,7 +70,7 @@ def show_statistics_class(sql, class_name):
             tot_attend += result[1]
             logging.info('Student {} {} average score - {} and attendance {}'.format(student['name'],
                         student['surname'], result[0], result[1]))
-    logging.info('Total class {} average score - {} and attendance {}%'.format(class_name, round(tot_avg/stud, 2), round(tot_attend/stud, 2)))
+    logging.info('Total class {} average score - {} and attendance {}%\n\n'.format(class_name, round(tot_avg/stud, 2), round(tot_attend/stud, 2)))
 
 
 def show_statistics_student(school, class_name, student_name, student_surname):
@@ -83,7 +83,7 @@ def show_statistics_student(school, class_name, student_name, student_surname):
         subj += 1
         grades += res[0]
         attendance += res[1]
-    logging.info('Student {} {} average score overall - {} and attendance {}%'.format(student_name, student_surname, round(grades / subj), round(attendance / subj)))
+    logging.info('Student {} {} average score overall - {} and attendance {}%\n\n'.format(student_name, student_surname, round(grades / subj), round(attendance / subj)))
 
 
 if __name__ == "__main__":
